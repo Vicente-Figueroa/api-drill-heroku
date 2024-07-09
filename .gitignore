@@ -1,0 +1,41 @@
+# Archivos compilados de Python
+*.pyc
+*.pyo
+*.pyd
+
+# Directorios de caché y logs
+__pycache__/
+*.log
+
+# Entornos virtuales
+venv/
+env/
+.env
+
+# Archivos de configuración local
+instance/
+.webassets-cache
+
+# Archivos de base de datos
+*.db
+*.sqlite
+
+# Archivos de entorno de desarrollo
+.vscode/
+.idea/
+
+# Archivos generados por pruebas y cobertura
+.coverage
+*.coveragerc
+htmlcov/
+
+# Archivos de documentación generados
+docs/_build/
+
+# Archivos de distribución
+dist/
+build/
+*.egg-info/
+
+# Archivos específicos de tu aplicación
+# Agrega aquí cualquier archivo o directorio específico de tu proyecto que no quieras incluir en el repositorio
