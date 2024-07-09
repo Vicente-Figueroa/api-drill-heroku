@@ -6,10 +6,15 @@ from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 from flask_cors import CORS
 import os
+#from dotenv import load_dotenv
+#load_dotenv()
 
 
 key_id = os.environ['KEY_ID']
 key = os.environ['KEY']
+
+#key_id = os.getenv('KEY_ID')
+#key = os.getenv('KEY')
 # Configurar las credenciales de AWS
 aws_region = "us-east-1"
 s3_bucket = "awsbucket180624"
@@ -33,7 +38,7 @@ with open(local_file_name, 'rb') as file:
 
 # Configuración del modelo
 llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key='AIzaSyAtQwglcD0LvJdhKcbb2KCNjHhiSAepvqQ')
-prompt = """Como un asistende de Utem hazte pasar por un asesor experimentado respondiendo amablemente
+prompt = """Como un asistende de Utem hazte pasar por un asesor experimentado en atención al cliente respondiendo amablemente
 en base al contexto que se te ha dado. Recuerda siempre proporcionar la mayor información posible y responder
 la siguiente pregunta: {question} .
 Y este es tu contexto: {context}
@@ -74,7 +79,7 @@ def chat():
             return jsonify({"response": "Por favor, envía una consulta válida."})
     else:
         # Mensaje de bienvenida para GET
-        query = "Hola, presentate y da esta información: Este bot es para preguntas y respuestas sobre mi trabajo, además de que se pedirá el correo en un momento del chat para continuar o no con la conversación. Se pide por favor si se está interesado contactarme por correo en la sección de contacto."
+        query = "Hola, presentate"
         result = qa_chain({"query": query})
         response = result['result']
 
