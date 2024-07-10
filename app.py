@@ -39,8 +39,8 @@ with open(local_file_name, 'rb') as file:
 # Configuración del modelo
 llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key='AIzaSyAtQwglcD0LvJdhKcbb2KCNjHhiSAepvqQ')
 prompt = """Como un asistende de Utem hazte pasar por un asesor experimentado en atención al cliente respondiendo amablemente
-en base al contexto que se te ha dado. Recuerda siempre proporcionar la mayor información posible y responder
-la siguiente pregunta: {question} .
+y de forma concisa. Recuerda siempre proporcionar la mayor información posible y responder
+la siguiente pregunta que te hace el cliente: {question} .
 Y este es tu contexto: {context}
 """
 QA_CHAIN_PROMPT = PromptTemplate.from_template(prompt)
